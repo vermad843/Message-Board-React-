@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import {Helmet} from 'react-helmet';
 
 
-class App extends Component {
-  constructor() {
-    super();
-   this.state = {
-     title : 'Message Board' ,
-    }
-  }
-  
-  formSubmitted(event) {
-    event.preventDefault();
-  console.log("hello world");
-  
-  }
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
+export default function ButtonAppBar() {
+  const classes = useStyles();
 
-
-  render() {
-    const {title} =this.state;
-    return (
-    <div className = "App">
-      <h1 className= "title">{title}</h1>
-       <form   className ="mew-form" onSubmit = {this.formSubmitted}>
-      <h6> <label  htmlFor = "name">Name</label></h6>
-       <input className = "u-full-width" type ="text" id = "name" name = "name" />  
-    <h6><label  htmlFor = "content">Mew</label></h6>
-       <textarea className = "u-full-width" type ="text" id = "content" name = "content"></textarea> 
-       <button type = "submit" className ="button-primary">Submit your mew</button>
-     </form>
-   </div>
-    );
-  }
+  return (
+    <div className={classes.root}>
+       <Helmet>
+            <style>{'body { background-color: DarkSlateGray }'}</style>
+        </Helmet>
+        <AppBar style={{ background: 'DarkOrange' }}>
+        <Toolbar>
+        <Typography variant="h3" className={classes.title}>
+            Auth For Newbs
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default App;
