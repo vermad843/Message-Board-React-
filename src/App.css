@@ -2,12 +2,15 @@
     font-size: 5em;
     font-weight: 5em;
     text-align: center;
+    margin : 5px 
 }
 
 
 
-.signup-form{
+.login-form{
     width :  50%;
     margin : 0 auto;
+    padding-top : 75px
  }
+
 
