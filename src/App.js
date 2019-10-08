@@ -1,38 +1,31 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import {Helmet} from 'react-helmet';
+import React, { Component } from 'react';
+import './App.css';
 
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
-export default function ButtonAppBar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-       <Helmet>
-            <style>{'body { background-color: DarkSlateGray }'}</style>
-        </Helmet>
-        <AppBar style={{ background: 'DarkOrange' }}>
-        <Toolbar>
-        <Typography variant="h3" className={classes.title}>
-            Auth For Newbs
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+   this.state = {
+     title : 'Signup ' ,
+    }
+  }
+  render() {
+    const {title} = this.state;
+    return (
+      <div className = "App">
+      <h1 className= "title">{title}</h1>
+       <form  className ="signup-form">
+      <h6> <label  htmlFor = "username">Username</label></h6>
+       <input className = "u-full-width" type ="text" id = "username" name = "username" />  
+       <h6> <label  htmlFor = "password">Password</label></h6>
+       <input className = "u-full-width" type ="text" id = "password" name = "password" /> 
+       <h6> <label  htmlFor = "confirmpassword">confirmPassword</label></h6>
+       <input className = "u-full-width" type ="text" id = "confirmpassword" name = "confirmpassword" /> 
+       <button type = "submit" className ="button-primary">Sign Up</button>
+     </form>
+   </div>
+    );
+  }
 }
+
+export default App;
