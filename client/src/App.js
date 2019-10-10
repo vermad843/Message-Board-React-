@@ -12,7 +12,8 @@ class App extends Component {
       mews : [{
         name : "Dk",
         mew  : "wow",
-      }]
+      }],
+      loading : false 
     }
   }
 
@@ -32,10 +33,18 @@ class App extends Component {
 
   
   formSubmitted(event) {
-    let mews = this.state.mews;
-    console.log(mews);
     event.preventDefault();
+
     this.setState({
+     loading : true
+    });
+   const mews = this.state.mews;
+   console.log(mews);
+
+
+    this.setState({
+      name : '',
+      mew : '',
      mews : [...this.state.mews, {
        name : this.state.name,
        mew : this.state.mew,
@@ -49,17 +58,20 @@ class App extends Component {
 
 
   render() {
-    const { message}  = this.state;
+    const { message,loading}  = this.state;
     return (
       <div>
       <h1 className = "title">{message}</h1>
-        <form onSubmit ={this.formSubmitted.bind(this)} className ="form-style">
+        <form onSubmit ={this.formSubmitted.bind(this)} className ="mew-form">
           <label  htmlFor = "name">Name</label>
           <input onChange = {this.nameChanged.bind(this)} className = "u-full-width" type ="text" id = "name" name = "name" />  
           <label  htmlFor = "content">Mew</label>
           <textarea  onChange = {this.mewChanged.bind(this)} className = "u-full-width" type ="text" id = "mew" name = "mew"></textarea> 
           <button type = "submit" className ="button-primary">Submit</button>
       </form>
+      <div className = "loading">
+      {loading ? <img  src = "Facebook-1s-200px.gif" alt = "loading" /> : '' }
+      </div>
       </div>
     );
   }

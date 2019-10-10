@@ -4,7 +4,7 @@
     font-weight : bold;
 }
 
-.form-style {
+.mew-form {
    width :  50%;
    margin : 0 auto;
    padding : 25px;
@@ -13,3 +13,8 @@
 .button-primary {
     border-radius  : 8%;
 } 
+
+.loading {
+    text-align : center;
+}
+
