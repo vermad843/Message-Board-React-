@@ -1,16 +1,15 @@
+
 .title {
-    font-size: 5em;
-    font-weight: 5em;
-    text-align: center;
-    margin : 5px 
+    text-align : center;
+    font-weight : bold;
 }
 
+.form-style {
+   width :  50%;
+   margin : 0 auto;
+   padding : 25px;
+}
 
-
-.login-form{
-    width :  50%;
-    margin : 0 auto;
-    padding-top : 75px
- }
-
-
+.button-primary {
+    border-radius  : 8%;
+} 

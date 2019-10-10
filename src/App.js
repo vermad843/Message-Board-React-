@@ -5,23 +5,23 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-   this.state = {
-     title : 'Login ' ,
+    this.state = {
+      message : 'Message Board',
     }
   }
   render() {
-    const {title} = this.state;
+    const { message}  = this.state;
     return (
-      <div className = "App">
-      <h1 className= "title">{title}</h1>
-       <form  className ="login-form">
-      <h6> <label  htmlFor = "username">Username</label></h6>
-       <input className = "u-full-width" type ="text" id = "username" name = "username" />  
-       <h6> <label  htmlFor = "password">Password</label></h6>
-       <input className = "u-full-width" type ="text" id = "password" name = "password" /> 
-     <h6> <button type = "submit" className ="button-primary">Login</button></h6> 
-     </form>
-   </div>
+      <div>
+      <h1 className = "title">{message}</h1>
+        <form className ="form-style">
+          <label  htmlFor = "name">Name</label>
+          <input className = "u-full-width" type ="text" id = "name" name = "name" />  
+          <label  htmlFor = "content">Content</label>
+          <textarea className = "u-full-width" type ="text" id = "name" name = "name"></textarea> 
+          <button className ="button-primary">Submit</button>
+      </form>
+      </div>
     );
   }
 }
